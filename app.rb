@@ -1,0 +1,6 @@
+require_relative("lib/rook.rb")
+white_rook=Rook.new(8,1,"white")
+p white_rook.move?(8,4)
+p white_rook.move?(6,1)
+p white_rook.move?(6,4)
+p white_rook.move?(2,5)
