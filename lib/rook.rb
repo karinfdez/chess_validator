@@ -1,9 +1,4 @@
-class Rook
-	def initialize(postx,posty, color)
-		@postx=postx
-		@posty=posty
-		@color=color
-	end
+class Rook < Piece
 	def move?(destx,desty)
 	 @postx==destx || @posty==desty
 	end

@@ -1,3 +1,4 @@
+require_relative("lib/piece.rb")
 require_relative("lib/rook.rb")
 require_relative("lib/king.rb")
 
