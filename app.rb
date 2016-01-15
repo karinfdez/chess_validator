@@ -5,6 +5,9 @@ require_relative("lib/bishop.rb")
 require_relative("lib/knight.rb")
 require_relative("lib/queen.rb")
 require_relative("lib/board.rb")
+require_relative("lib/pawn.rb")
+require_relative("lib/whitepawn.rb")
+require_relative("lib/blackpawn.rb")
 
 puts "White Rook"
 white_rook=Rook.new(8,1,"white")
@@ -40,6 +43,28 @@ p white_queen.move?(4,5)
 p white_queen.move?(7,4)
 p white_queen.move?(2,6)
 p white_queen.move?(8,4)
+
+puts "White pawn movements"
+#valid start position
+white_pawn=WhitePawn.new(7,2)
+
+p "Valid movements White pawns"
+p white_pawn.move?(7,4) #Make 2 movements because first move.
+p white_pawn.move?(7,3) #Makes 1 as first move
+p "Invalid movements white pawns"
+p white_pawn.move?(7,6) 
+p white_pawn.move?(8,3)
+p white_pawn.move?(5,5) 
+p white_pawn.move?(7,1) 
+
+black_pawn=BlackPawn.new(7,7)
+p "Valid movements Black pawns"
+p black_pawn.move?(7,6) #Make 2 movements because first move.
+p black_pawn.move?(7,5) #Makes 1 as first move
+p "Invalid movements Black pawns"
+p black_pawn.move?(7,8) 
+p black_pawn.move?(8,3)
+p black_pawn.move?(6,4) 
 
 #       0    1  2  3  4  5  6  7  8
 pieces=[nil, [],[],[],[],[],[],[],[]]
