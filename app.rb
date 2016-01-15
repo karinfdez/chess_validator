@@ -4,6 +4,7 @@ require_relative("lib/king.rb")
 require_relative("lib/bishop.rb")
 require_relative("lib/knight.rb")
 require_relative("lib/queen.rb")
+require_relative("lib/board.rb")
 
 puts "White Rook"
 white_rook=Rook.new(8,1,"white")
@@ -39,3 +40,17 @@ p white_queen.move?(4,5)
 p white_queen.move?(7,4)
 p white_queen.move?(2,6)
 p white_queen.move?(8,4)
+
+#       0    1  2  3  4  5  6  7  8
+pieces=[nil, [],[],[],[],[],[],[],[]]
+pieces[8][1]=white_rook
+pieces[5][1]=white_king
+pieces[6][1]=white_bishop
+pieces[7][1]=white_knight
+pieces[4][1]=white_queen
+puts "Test for board movements"
+board=Board.new(pieces)
+p board.move?(8,1,8,4)
+p board.move?(5,1,6,2)
+p board.move?(5,5,6,2)
+p board.move?(7,1,3,40)
